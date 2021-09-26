@@ -1,0 +1,28 @@
+.sidebar {
+  width: 50px;
+  height: calc(100vh - 50px);
+  position: fixed;
+  top: 50px;
+  left: 0;
+  background-color: black;
+  color: white;
+  z-index: 44;
+  &.active {
+    background-color: white;
+    color: black;
+  }
+  ul {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    li {
+      font-size: 20px;
+      margin-bottom: 40px;
+      &:nth-child(1) {
+        margin-top: 10px;
+      }
+    }
+  }
+}

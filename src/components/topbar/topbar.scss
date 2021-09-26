@@ -1,0 +1,122 @@
+.topbar {
+  font-family: 'Sen', sans-serif;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  height: 50px;
+  background-color: black;
+  color: white;
+  padding: 0px 50px;
+  z-index: 33;
+
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .left {
+      flex: 1;
+      font-size: 30px;
+      font-weight: bold;
+      color: rgb(26, 255, 53);
+    }
+    .center {
+      flex: 4;
+      ul {
+        display: flex;
+        list-style-type: none;
+        li {
+          margin-right: 20px;
+          font-size: 18px;
+          &:nth-child(1) {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      .profile-img {
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+      .profile-details {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px 20px;
+        font-size: 17px;
+        .fas {
+          cursor: pointer;
+          margin: 0px 5px;
+          &:active {
+            color: crimson;
+          }
+        }
+      }
+      .toggle {
+        width: 50px;
+        height: 25px;
+        background-color: white;
+        border-radius: 20px;
+        margin-left: 5px;
+        position: relative;
+        .fa-sun {
+          color: goldenrod;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 5px;
+        }
+        .toggle-ball {
+          width: 20px;
+          transition: all 0.5s ease;
+          height: 20px;
+          position: absolute;
+          top: 52%;
+          right: 5px;
+          transform: translateY(-50%);
+          border-radius: 50%;
+          background-color: rgb(49, 48, 48);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &.active {
+    background-color: white;
+    color: black;
+
+    .container {
+      .right {
+        .toggle {
+          background-color: rgb(141, 146, 146);
+
+          .toggle-ball {
+            right: 25px;
+            // top: 50%;
+
+            // transform: translateX(-20px);
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .container {
+      .center {
+        ul {
+          display: none;
+        }
+      }
+    }
+  }
+}

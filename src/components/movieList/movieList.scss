@@ -1,0 +1,109 @@
+.movieList {
+  padding: 20px;
+  &.active {
+    .title {
+      color: rgb(44, 43, 43);
+    }
+  }
+  .title {
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 800px) {
+      font-size: 18px;
+    }
+  }
+  .movies-container {
+    position: relative;
+    overflow: hidden;
+    .fa-chevron-left {
+      position: absolute;
+      top: 45%;
+      left: 0;
+      transform: translateY(-50%);
+      font-size: 80px;
+      cursor: pointer;
+      color: lightgrey;
+      transition: all 0.5s ease;
+    }
+    .fa-chevron-right {
+      position: absolute;
+      top: 45%;
+      right: 0;
+      transform: translateY(-50%);
+      font-size: 80px;
+      cursor: pointer;
+      color: lightgrey;
+      transition: all 0.5s ease;
+    }
+    .fas:hover {
+      color: grey;
+    }
+    .movies {
+      display: flex;
+      transform: translateX(0);
+      transition: all 1s ease-in-out;
+      padding: 30px 0px;
+      .movie {
+        position: relative;
+        margin-right: 20px;
+        img {
+          transition: all 0.5s ease-in-out;
+          width: 282px;
+          height: 200px;
+          border-radius: 10px;
+        }
+        &:hover img {
+          transform: scale(1.2);
+          margin: 0px 20px;
+        }
+        &:hover .movie-title,
+        &:hover .movie-details,
+        &:hover button {
+          opacity: 1;
+        }
+        .movie-title {
+          transition: all 0.5s ease-in-out;
+          position: absolute;
+          top: 30px;
+          left: 20%;
+          font-size: 20px;
+          font-weight: bold;
+          background-color: lightgrey;
+          padding: 5px 10px;
+          opacity: 0;
+        }
+        .movie-details {
+          transition: all 0.5s ease-in-out;
+          position: absolute;
+          width: 210px;
+          top: 70px;
+          left: 20%;
+          font-size: 18px;
+          background-color: lightgrey;
+          padding: 5px 10px;
+          opacity: 0;
+        }
+        button {
+          transition: all 0.5s ease-in-out;
+          padding: 10px 20px;
+          font-size: 18px;
+          border: none;
+          outline: none;
+          font-weight: bold;
+          background-color: limegreen;
+          border-radius: 5px;
+          color: white;
+          position: absolute;
+          top: 150px;
+          left: 20%;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

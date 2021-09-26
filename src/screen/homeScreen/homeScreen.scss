@@ -1,0 +1,8 @@
+.homeScreen {
+  background-color: #151515;
+  min-height: 100vh;
+  margin-left: 50px;
+  &.active {
+    background-color: white;
+  }
+}
